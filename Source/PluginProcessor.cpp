@@ -196,6 +196,11 @@ void HypeClipperAudioProcessor::prepareToPlay(
     parameters.addParameterListener("tube", this);
     
     parameters.addParameterListener("lock", this);
+    
+    hypeClipper.setPreGain(parameters.getRawParameterValue("pre")->load());
+    hypeClipper.setPostGain(parameters.getRawParameterValue("post")->load());
+    hypeClipper.setBias(parameters.getRawParameterValue("bias")->load());
+    hypeClipper.setSagDepth(parameters.getRawParameterValue("tube")->load());
 }
 
 //==============================================================================

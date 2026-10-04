@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="rYX7CG" name="HypeClipper" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="MusicaLogic"
+              pluginVST3Category="Distortion" pluginAAXCategory="0">
   <MAINGROUP id="vvsNZn" name="HypeClipper">
     <GROUP id="{D46CC5A6-5284-BF11-1EE8-41FABF6F150A}" name="Source">
       <GROUP id="{5EC39D08-FD7F-1020-896B-7B06476A05D0}" name="DSP">

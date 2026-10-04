@@ -40,8 +40,17 @@ public:
         postGain += smoothingCoefficient * (targetPostGain - postGain);
         preGain += smoothingCoefficient * (targetPreGain - preGain);
         bias += 0.1*smoothingCoefficient * (targetBias - bias);
-        return postGain
-             * std::tanh(preGain * input + bias);
+        
+        float saturatedOutput = std::tanh(preGain * input + bias);
+        
+        float cleanCenteredOutput = saturatedOutput - x1 + R * y1;
+        
+        x1 = saturatedOutput;
+        y1 = cleanCenteredOutput;
+        
+        return postGain * cleanCenteredOutput;
+        
+//        return postGain * std::tanh(preGain * input + bias);
     }
 
     void process(float* buffer, int numSamples)
@@ -60,4 +69,8 @@ private:
     float bias     = 0.0f;
     float targetBias = 0.0f;
     float smoothingCoefficient = 0.00005;
+    
+    // DC Blocker
+    float x1, y1;
+    float const R = 0.999f;
 };
