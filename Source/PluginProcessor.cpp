@@ -66,7 +66,7 @@ HypeClipperAudioProcessor::createParameterLayout()
             juce::ParameterID { "bias", 1 },
             "Bias",
             juce::NormalisableRange<float>(
-                -1.0f,
+                0.0f,
                 1.0f,
                 0.001f),
             0.0f));
@@ -103,7 +103,7 @@ HypeClipperAudioProcessor::createParameterLayout()
         std::make_unique<juce::AudioParameterBool>(
             juce::ParameterID { "lock", 1 },
             "Lock",
-            false));
+            true));
 
     return {
         params.begin(),
