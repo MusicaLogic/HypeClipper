@@ -80,7 +80,7 @@ HypeClipperAudioProcessor::createParameterLayout()
                 0.0f,
                 1.0f,
                 0.001f),
-            1.0f));
+            0.5f));
 
     // Post gain multiplier
     params.push_back(
